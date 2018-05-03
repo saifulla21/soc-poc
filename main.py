@@ -14,13 +14,9 @@ def index():
 def test():
     return 'test'
 
-@socketio.on('myevent')
+@socketio.on('my_event', namespace='/ws-poc')
 def test_message(message):
-    emit('myresponse', {'data': 'got it!'})
-    
-@socketio.on('chat message')
-def test_message(message):
-    emit('chat message', message)
+    emit('my_response', {'data': 'got it!'})
 
 if __name__ == '__main__':
     socketio.run(app)
