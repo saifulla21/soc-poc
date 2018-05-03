@@ -8,11 +8,11 @@ socketio = SocketIO(app,engineio_logger=False,log_output=False,async_mode='event
 
 @app.route('/')
 def index():
-    return 'hello World !!'
+    return render_template('index.html')
     
 @app.route('/test')
 def test():
-    return 'test'
+    return render_template('index.html')
 
 @socketio.on('my_event', namespace='/ws-poc')
 def test_message(message):
