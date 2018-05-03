@@ -1,12 +1,12 @@
 from geventwebsocket.handler import WebSocketHandler
 from gevent.pywsgi import WSGIServer
-from flask import Flask, request, render_template
+from flask import Flask, request
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return 'hello World !!'
 
 @app.route('/api')
 def api():
